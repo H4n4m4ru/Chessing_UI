@@ -2758,6 +2758,7 @@ namespace Chessing_UI
                 TrackMap.Image = trackMapPIC;
 
                 //"Checking of Check" lol
+                GameOver = true;
                 foreach (Chess Jekll in Shiro.Units)
                     if ((Jekll.ID != 60229) && (Jekll.CanMoveTo(Kuro.K.calumn, Kuro.K.row))) CheckingList.Add(Jekll);
                 if (CheckingList.Count > 0) Checking = true;
@@ -2786,7 +2787,8 @@ namespace Chessing_UI
                 Checking = false;
                 CheckingList.Clear();
                 En_passantable = false;
-                        
+                GameOVer = true;
+                
                 AI_San.AI_s_Turn(IDMatrix, Chess_Picked.ID, PT_Start, PT_End);
                 AI_Move(AI_San.NextStep);
                 record += AI_San.NextStep.ElementAt(0).ToString() + AI_San.NextStep.ElementAt(1).ToString() + "->" + AI_San.NextStep.ElementAt(2).ToString() + AI_San.NextStep.ElementAt(3).ToString();
@@ -2908,6 +2910,7 @@ namespace Chessing_UI
             TrackMap.Image = trackMapPIC;
 
             //"Checking of Check" lol
+            GameOver = true;
             foreach (Chess Jekll in Shiro.Units)
                 if ((Jekll.ID != 60229) && (Jekll.CanMoveTo(Kuro.K.calumn, Kuro.K.row))) CheckingList.Add(Jekll);
             if (CheckingList.Count > 0) Checking = true;
@@ -2937,6 +2940,7 @@ namespace Chessing_UI
             Checking = false;
             CheckingList.Clear();
             En_passantable = false;
+            GameOver = true;
             
             AI_San.AI_s_Turn(IDMatrix, Chess_Picked.ID, PT_Start, PT_End);
             AI_Move(AI_San.NextStep);
